@@ -1,0 +1,31 @@
+Date,Product,Category,Price,Quantity Sold,Total Sales
+2025-01-01,Laptop,Electronics,50000,2,100000
+2025-01-02,Mobile,Electronics,25000,4,100000
+2025-01-03,Headphones,Electronics,3000,10,30000
+2025-01-04,Keyboard,Electronics,1500,12,18000
+2025-01-05,Mouse,Electronics,800,15,12000
+2025-01-06,T-Shirt,Clothing,700,20,14000
+2025-01-07,Jeans,Clothing,1800,8,14400
+2025-01-08,Jacket,Clothing,2500,5,12500
+2025-01-09,Shoes,Footwear,3000,6,18000
+2025-01-10,Sandals,Footwear,1200,10,12000
+2025-01-11,Rice,Grocery,60,100,6000
+2025-01-12,Wheat Flour,Grocery,45,120,5400
+2025-01-13,Milk,Grocery,55,80,4400
+2025-01-14,Bread,Grocery,40,70,2800
+2025-01-15,Eggs,Grocery,7,300,2100
+2025-01-16,Watch,Accessories,4500,5,22500
+2025-01-17,Bag,Accessories,1800,7,12600
+2025-01-18,Sunglasses,Accessories,2200,6,13200
+2025-01-19,Printer,Electronics,12000,3,36000
+2025-01-20,Monitor,Electronics,15000,4,60000
+2025-01-21,Tablet,Electronics,18000,3,54000
+2025-01-22,Camera,Electronics,35000,2,70000
+2025-01-23,Cap,Clothing,500,15,7500
+2025-01-24,Socks,Clothing,200,30,6000
+2025-01-25,Slippers,Footwear,700,12,8400
+2025-01-26,Cooking Oil,Grocery,180,40,7200
+2025-01-27,Sugar,Grocery,50,90,4500
+2025-01-28,Tea,Groceries,250,35,8750
+2025-01-29,Coffee,Grocery,350,25,8750
+2025-01-30,Backpack,Accessories,2500,8,20000
