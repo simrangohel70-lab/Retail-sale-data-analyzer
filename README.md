@@ -204,4 +204,4 @@ Retail-Sales-Analyzer/
 
 **Simran Gohel**
 
-Python Retail Sales Analyzer Project
+Python Retail Sales Analyzer 
