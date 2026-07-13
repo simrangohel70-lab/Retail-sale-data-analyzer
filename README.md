@@ -2,6 +2,8 @@
 
 A Python-based Retail Sales Analyzer that loads retail sales data from a CSV file, performs data analysis, calculates sales metrics, filters data by category, and visualizes the results using charts and heatmaps.
 
+click here to see video:https://drive.google.com/file/d/142n3L2-NtJyqZygQdjuILeeo53MNvGHu/view?usp=drive_link
+
 ---
 
 ## 📌 Features
