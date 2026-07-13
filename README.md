@@ -174,6 +174,8 @@ max     50000.0000      10.0000    100000.0000
 
 📷 **Screenshot Here**
 
+<img width="782" height="620" alt="image" src="https://github.com/user-attachments/assets/0c346da6-027f-43ef-a4f8-4b885f6b3b04" />
+
 ---
 
 ## 📉 Line Chart
@@ -181,6 +183,8 @@ max     50000.0000      10.0000    100000.0000
 📌 Displays sales trend over time.
 
 📷 **Screenshot Here**
+
+<img width="778" height="605" alt="image" src="https://github.com/user-attachments/assets/f3e2d3f1-557e-490e-b940-ac5e8a0b7cda" />
 
 ---
 
@@ -190,11 +194,7 @@ max     50000.0000      10.0000    100000.0000
 
 📷 **Screenshot Here**
 
----
-
-# 📸 Console Output Screenshot
-
-📷 Add your console screenshot here.
+<img width="771" height="587" alt="image" src="https://github.com/user-attachments/assets/8e21ffa6-e7b4-430e-9a65-6a1bd4de60d0" />
 
 ---
 
