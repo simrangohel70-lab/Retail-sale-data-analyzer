@@ -1,24 +1,26 @@
-# 🛍️ Retail Sales Analyzer
+# 🛍️📊 Retail Sales Analyzer
 
-A Python-based Retail Sales Analyzer that loads retail sales data from a CSV file, performs data analysis, calculates sales metrics, filters data by category, and visualizes the results using charts and heatmaps.
+## 📖 Project Description
 
-click here to see video:https://drive.google.com/file/d/142n3L2-NtJyqZygQdjuILeeo53MNvGHu/view?usp=drive_link
+Retail Sales Analyzer is a Python-based project that helps analyze retail sales data from a CSV file. It calculates important sales metrics, filters data by category, displays statistical summaries, and visualizes sales using different charts.
 
 ---
 
-## 📌 Features
+# ✨ Features
 
-✅ Load retail sales data from a CSV file
+✅ Load retail sales dataset from CSV
 
-✅ Display dataset summary
+✅ Calculate Total Sales
 
-✅ Check missing values
+✅ Calculate Average Sales
 
-✅ Calculate sales statistics
+✅ Find Most Popular Product
 
-✅ Find the most popular product
+✅ Calculate Average Sales using NumPy
 
-✅ Filter data by category
+✅ Filter data by Category
+
+✅ Display Dataset Summary
 
 ✅ Generate Bar Chart
 
@@ -26,182 +28,224 @@ click here to see video:https://drive.google.com/file/d/142n3L2-NtJyqZygQdjuILee
 
 ✅ Generate Correlation Heatmap
 
----
-
-## 🛠️ Technologies Used
-
-- 🐍 Python
-- 📊 Pandas
-- 🔢 NumPy
-- 📈 Matplotlib
-- 🎨 Seaborn
+✅ Menu Driven Program using OOP
 
 ---
 
-## 📂 Required CSV Columns
+# 🛠️ Technologies Used
 
-Your CSV file should contain the following columns:
+🐍 Python
 
-| Column Name |
-|-------------|
-| Date |
-| Product |
-| Category |
-| Sales |
+📊 Pandas
 
-Example:
+🔢 NumPy
 
-| Date | Product | Category | Sales |
-|------|---------|----------|-------|
-|2025-01-01|Laptop|Electronics|50000|
-|2025-01-02|Mouse|Accessories|800|
-|2025-01-03|Keyboard|Accessories|1200|
+📈 Matplotlib
+
+🔥 Seaborn
 
 ---
 
-## ▶️ How to Run
+# 📂 Project Files
 
-1. Install required libraries
+```
+Retail Sales Analyzer/
+│
+├── retail_sales.py
+├── retail_sales.csv
+├── README.md
+└── Screenshots/
+```
+
+---
+
+# ▶️ How to Run
+
+### 📌 Step 1
+
+Install required libraries
 
 ```bash
 pip install pandas numpy matplotlib seaborn
 ```
 
-2. Save your CSV file.
+### 📌 Step 2
 
-3. Run the program.
+Keep **retail_sales.csv** in the project folder.
+
+### 📌 Step 3
+
+Run the program
 
 ```bash
-python retail_analyzer.py
-```
-
-4. Enter the CSV file name.
-
-Example
-
-```
-Enter CSV File Name :
-retail_data.csv
-```
-
-5. Enter a category.
-
-Example
-
-```
-Electronics
+python retail_sales.py
 ```
 
 ---
 
-## 📊 Output
-
-### Data Loaded
+# 🖥️ Program Menu
 
 ```
-Data Loaded Successfully!
-```
+🛍️ RETAIL SALES ANALYZER
 
----
-
-### First 5 Records
-
-```
-         Date    Product      Category   Sales
-0  2025-01-01     Laptop  Electronics   50000
-1  2025-01-02      Mouse  Accessories     800
-2  2025-01-03   Keyboard  Accessories    1200
-3  2025-01-04     Mobile  Electronics   30000
-4  2025-01-05    Printer    Office      9000
+1️⃣ Load Data
+2️⃣ Calculate Metrics
+3️⃣ Filter Data
+4️⃣ Dataset Summary
+5️⃣ Bar Chart
+6️⃣ Line Chart
+7️⃣ Heatmap
+8️⃣ Exit
 ```
 
 ---
 
-### Sales Metrics
+# 💻 Sample Output
+
+## 📂 Load Data
 
 ```
------- SALES METRICS ------
-Total Sales : 91000
-Average Sales : 18200
-Maximum Sale : 50000
-Minimum Sale : 800
-Most Popular Product : Laptop
-```
+Enter Choice : 1
 
----
-
-### Filter Output
-
-```
-Enter Category :
-Electronics
-
-         Date Product      Category  Sales
-0 2025-01-01 Laptop  Electronics 50000
-3 2025-01-04 Mobile Electronics 30000
+✅ Dataset Loaded Successfully!
 ```
 
 ---
 
-## 📈 Charts Generated
-
-### 📊 Category Wise Sales (Bar Chart)
+## 📊 Calculate Metrics
 
 ```
-Electronics ███████████████
-Accessories ███
-Office ████
-```
+Enter Choice : 2
 
----
+📊 SALES REPORT
 
-### 📉 Sales Over Time (Line Chart)
+💰 Total Sales : 185000
 
-```
-Sales
-|
-|        ●
-|      ●
-|    ●
-|  ●
-|●____________________
-      Date
+📈 Average Sales : 9250.00
+
+🏆 Most Popular Product : Laptop
+
+🔢 Average Sales using NumPy : 9250.0
 ```
 
 ---
 
-### 🔥 Correlation Heatmap
-
-A heatmap is generated showing the correlation between numeric columns.
-
----
-
-## 📁 Project Structure
+## 🔍 Filter Data
 
 ```
-Retail-Sales-Analyzer/
-│
-├── retail_analyzer.py
-├── retail_data.csv
-├── README.md
+Enter Choice : 3
+
+Enter Category : Electronics
+
+        Date      Product      Category      Price   Quantity Sold   Total Sales
+
+2025-01-01   Laptop      Electronics    50000          2           100000
+
+2025-01-04   Mouse       Electronics      500         10             5000
 ```
 
 ---
 
-## 🎯 Learning Outcomes
+## 📋 Dataset Summary
 
-- Object-Oriented Programming (OOP)
-- File Handling
-- Exception Handling
-- Pandas Data Analysis
-- NumPy Operations
-- Data Visualization
-- Python Classes and Functions
+```
+Enter Choice : 4
+
+📋 Dataset Summary
+
+              Price   Quantity Sold   Total Sales
+
+count      20.0000      20.0000        20.0000
+mean    15250.0000       5.2500      9250.0000
+std     18230.0000       2.6400      7450.0000
+min       100.0000       1.0000       500.0000
+max     50000.0000      10.0000    100000.0000
+```
 
 ---
 
-## 👩‍💻 Author
+# 📈 Charts
 
-**Simran Gohel**
+## 📊 Bar Chart
 
-Python Retail Sales Analyzer 
+📌 Displays total sales of each product.
+
+📷 **Screenshot Here**
+
+---
+
+## 📉 Line Chart
+
+📌 Displays sales trend over time.
+
+📷 **Screenshot Here**
+
+---
+
+## 🔥 Heatmap
+
+📌 Displays correlation between Price, Quantity Sold and Total Sales.
+
+📷 **Screenshot Here**
+
+---
+
+# 📸 Console Output Screenshot
+
+📷 Add your console screenshot here.
+
+---
+
+# 📚 Concepts Used
+
+✅ Object-Oriented Programming (OOP)
+
+✅ Classes & Objects
+
+✅ Constructor (`__init__`)
+
+✅ Exception Handling (`try-except`)
+
+✅ Pandas DataFrame
+
+✅ NumPy
+
+✅ GroupBy
+
+✅ Data Filtering
+
+✅ Matplotlib
+
+✅ Seaborn Heatmap
+
+✅ CSV File Handling
+
+---
+
+# 🎯 Learning Outcomes
+
+🌟 Learned how to read CSV files.
+
+🌟 Learned data analysis using Pandas.
+
+🌟 Learned numerical operations using NumPy.
+
+🌟 Learned data visualization using Matplotlib & Seaborn.
+
+🌟 Learned OOP concepts in Python.
+
+🌟 Developed a complete menu-driven Retail Sales Analyzer.
+
+---
+
+# 🙋 Author
+
+👩 **Name:** Simran Gohel
+
+🎓 **Project:** Retail Sales Analyzer
+
+🐍 **Language:** Python
+
+📊 **Libraries:** Pandas • NumPy • Matplotlib • Seaborn
+
+⭐ Thank You! ⭐
