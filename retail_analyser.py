@@ -8,111 +8,121 @@ class RetailAnalyzer:
     def __init__(self):
         self.data = None
 
-    # Load CSV
-    def load_data(self, file_path):
+    def load_data(self, file):
         try:
-            self.data = pd.read_csv(file_path)
-            print("Data Loaded Successfully!")
+            self.data = pd.read_csv(file)
+            print("\nDataset Loaded Successfully!")
+        except:
+            print("File not found!")
 
-            if self.data.empty:
-                print("Dataset is Empty")
-            else:
-                print("Dataset Loaded Successfully")
-
-            return True
-
-        except FileNotFoundError:
-            print("CSV File Not Found!")
-            return False
-
-    # Display Summary
-    def display_summary(self):
-
-        print("\nFirst 5 Records")
-        print(self.data.head())
-
-        print("\nLast 5 Records")
-        print(self.data.tail())
-
-        print("\nDataset Info")
-        print(self.data.info())
-
-        print("\nMissing Values")
-        print(self.data.isnull().sum())
-
-    # Calculate Metrics
     def calculate_metrics(self):
-
-        self.data.fillna(0, inplace=True)
 
         total_sales = self.data["Total Sales"].sum()
         average_sales = self.data["Total Sales"].mean()
-        popular_product = self.data["Product"].mode()[0]
 
-        sales_array = np.array(self.data["Total Sales"])
+        popular_product = self.data.groupby("Product")["Quantity Sold"].sum().idxmax()
 
-        print("\n------ SALES METRICS ------")
+        print("\nSALES REPORT")
         print("Total Sales :", total_sales)
-        print("Average Sales :", average_sales)
-        print("Maximum Sale :", np.max(sales_array))
-        print("Minimum Sale :", np.min(sales_array))
+        print("Average Sales :", round(average_sales,2))
         print("Most Popular Product :", popular_product)
 
-    # Filter Data
-    def filter_data(self, category):
+        growth = np.mean(self.data["Total Sales"])
+        print("Average Sales using NumPy :", growth)
 
-        result = self.data[self.data["Category"] == category]
+    def filter_data(self):
 
-        if result.empty:
-            print("No Data Found!")
+        category = input("Enter Category : ")
+
+        result = self.data[self.data["Category"].str.lower()==category.lower()]
+
+        if len(result)==0:
+            print("No Data Found")
         else:
             print(result)
 
-    # Visualization
-    def visualize_data(self):
+    def display_summary(self):
 
-        # Bar Chart
-        plt.figure(figsize=(7,5))
-        self.data.groupby("Category")["Sales"].sum().plot(kind="bar", color="skyblue")
-        plt.title("Category Wise Sales")
-        plt.xlabel("Category")
+        print("\nDataset Summary")
+        print(self.data.describe())
+
+    def bar_chart(self):
+
+        sales = self.data.groupby("Product")["Total Sales"].sum()
+
+        sales.plot(kind="bar")
+
+        plt.title("Sales by Product")
+        plt.xlabel("Product")
         plt.ylabel("Total Sales")
         plt.show()
 
-        # Line Chart
-        plt.figure(figsize=(8,5))
-        self.data.groupby("Date")["Sales"].sum().plot(kind="line", marker="o", color="red")
-        plt.title("Sales Over Time")
+    def line_chart(self):
+
+        plt.plot(self.data["Date"],self.data["Total Sales"],marker="o")
+
+        plt.title("Sales Trend")
         plt.xlabel("Date")
-        plt.ylabel("Sales")
+        plt.ylabel("Total Sales")
         plt.xticks(rotation=45)
+
         plt.show()
 
-        # Heatmap
-        plt.figure(figsize=(6,4))
-        sns.heatmap(self.data.corr(numeric_only=True), annot=True, cmap="coolwarm")
+    def heatmap(self):
+
+        corr=self.data[["Price","Quantity Sold","Total Sales"]].corr()
+
+        sns.heatmap(corr,annot=True)
+
         plt.title("Correlation Heatmap")
         plt.show()
 
 
-# Main Program
+def menu():
 
-analyzer = RetailAnalyzer()
+    obj=RetailAnalyzer()
 
-file = input("Enter CSV File Name : ")
+    while True:
 
-if analyzer.load_data(file):
+        print("\nRETAIL SALES ANALYZER")
+        print("1. Load Data")
+        print("2. Calculate Metrics")
+        print("3. Filter Data")
+        print("4. Dataset Summary")
+        print("5. Bar Chart")
+        print("6. Line Chart")
+        print("7. Heatmap")
+        print("8. Exit")
 
-    analyzer.display_summary()
+        choice=input("Enter Choice : ")
 
-    analyzer.calculate_metrics()
+        if choice=="1":
+            obj.load_data("retail_sales.csv")
 
-    category = input("\nEnter Category : ")
+        elif choice=="2":
+            obj.calculate_metrics()
 
-    analyzer.filter_data(category)
+        elif choice=="3":
+            obj.filter_data()
 
-    analyzer.visualize_data()
+        elif choice=="4":
+            obj.display_summary()
 
-else:
+        elif choice=="5":
+            obj.bar_chart()
 
-    print("Please check your CSV file path.")
+        elif choice=="6":
+            obj.line_chart()
+
+        elif choice=="7":
+            obj.heatmap()
+
+        elif choice=="8":
+            print("Thank You")
+            break
+
+        else:
+            print("Invalid Choice")
+
+
+menu()
