@@ -4,6 +4,8 @@
 
 Retail Sales Analyzer is a Python-based project that helps analyze retail sales data from a CSV file. It calculates important sales metrics, filters data by category, displays statistical summaries, and visualizes sales using different charts.
 
+click here to see video:https://drive.google.com/file/d/1ChYrZWoyJNriyc_oYSq4JPvgLZy_fSRM/view?usp=drive_link
+
 ---
 
 # ✨ Features
